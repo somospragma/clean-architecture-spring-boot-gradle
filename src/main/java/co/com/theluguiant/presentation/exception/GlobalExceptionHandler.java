@@ -1,5 +1,6 @@
 package co.com.theluguiant.presentation.exception;
 
+import co.com.theluguiant.utils.custom_exceptions.InvalidValueException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -124,7 +125,7 @@ public class GlobalExceptionHandler {
 	    }
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+	public ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, WebRequest request) {
 		log.error("MethodArgumentNotValidException encountered: {}", ex.getMessage());
 
 		BindingResult bindingResult = ex.getBindingResult();
@@ -142,7 +143,7 @@ public class GlobalExceptionHandler {
 	}
 
 	@ExceptionHandler(HttpMessageNotReadableException.class)
-	public ResponseEntity<Object> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+	public ResponseEntity<Object> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex, WebRequest request) {
 		log.error("HttpMessageNotReadableException encountered: {}", ex.getMessage());
 
 		List<String> details = new ArrayList<String>();
@@ -151,6 +152,22 @@ public class GlobalExceptionHandler {
 		Response<Object> err = new Response<Object>();
 		err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		err.setMessage("TLG00008");
+		err.setErrors(details);
+
+		return ResponseEntityBuilder.build(err);
+	}
+
+
+	@ExceptionHandler(InvalidValueException.class)
+	public ResponseEntity<Object> handleInvalidValueException(InvalidValueException ex, WebRequest request) {
+		log.error("InvalidValueException encountered: {}", ex.getMessage());
+
+		List<String> details = new ArrayList<String>();
+		details.add(ex.getMessage());
+
+		Response<Object> err = new Response<Object>();
+		err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+		err.setMessage("TLG00009");
 		err.setErrors(details);
 
 		return ResponseEntityBuilder.build(err);
