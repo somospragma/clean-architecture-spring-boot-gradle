@@ -1,4 +1,4 @@
-package co.com.theluguiant.domain.service;
+package co.com.theluguiant.domain.use_case;
 
 import co.com.theluguiant.domain.dto.request.ProductsRequest;
 import co.com.theluguiant.domain.dto.response.Response;

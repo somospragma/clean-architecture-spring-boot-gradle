@@ -43,7 +43,7 @@ public class GlobalExceptionHandler {
 	        Response<Object> err = new Response<Object>();
 	        err.setStatus(HttpStatus.BAD_REQUEST.value());
 	        err.setMessage("TLG00001");
-	        err.setErrors(details);
+	        err.setData(details);
 
 	        return ResponseEntityBuilder.build(err);
 	    }
@@ -70,10 +70,9 @@ public class GlobalExceptionHandler {
 	        List<String> details = new ArrayList<String>();
 	        details.add(ex.getMessage());
 	        Response<Object> err = new Response<Object>();
-	        err.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setMessage("TLG00003");
-	        err.setErrors(details);
+	        err.setData(details);
 
 	        return ResponseEntityBuilder.build(err);
 
@@ -86,7 +85,6 @@ public class GlobalExceptionHandler {
 	        details.add(ex.getMessage());
 
 	        Response<Object> err = new Response<Object>();
-	        err.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setMessage("TLG00004");
 
@@ -102,7 +100,6 @@ public class GlobalExceptionHandler {
 	        details.add(ex.getMessage());
 
 	        Response<Object> err = new Response<Object>();
-	        err.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setMessage("TLG00005");
 	        if(showErrorData){
@@ -119,7 +116,6 @@ public class GlobalExceptionHandler {
 	        details.add(ex.getMessage());
 
 	        Response<Object> err = new Response<Object>();
-	        err.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 	        err.setMessage("TLG00006");
 
@@ -138,7 +134,6 @@ public class GlobalExceptionHandler {
 				.collect(Collectors.toList());
 
 		Response<Object> response = new Response<>();
-		response.setErrorCode(HttpStatus.BAD_REQUEST.value());
 		response.setStatus(HttpStatus.BAD_REQUEST.value());
 		response.setMessage("TLG00007");
 		response.setErrors(details);
@@ -154,7 +149,6 @@ public class GlobalExceptionHandler {
 		details.add("Body request: Required request body is missing [null]");
 
 		Response<Object> err = new Response<Object>();
-		err.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		err.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		err.setMessage("TLG00008");
 		err.setErrors(details);

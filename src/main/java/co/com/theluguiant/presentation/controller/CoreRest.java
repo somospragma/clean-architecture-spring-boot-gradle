@@ -10,7 +10,7 @@ import org.springframework.http.MediaType;
 
 import co.com.theluguiant.domain.dto.request.ProductsRequest;
 import co.com.theluguiant.domain.dto.response.Response;
-import co.com.theluguiant.domain.service.ProductBusiness;
+import co.com.theluguiant.domain.use_case.ProductBusiness;
 import jakarta.validation.Valid;
 
 @RestController

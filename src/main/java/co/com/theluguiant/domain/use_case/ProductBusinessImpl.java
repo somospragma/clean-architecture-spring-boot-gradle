@@ -1,4 +1,4 @@
-package co.com.theluguiant.domain.service;
+package co.com.theluguiant.domain.use_case;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +36,8 @@ public class ProductBusinessImpl implements ProductBusiness {
         product.setStatus(String.valueOf(true));
         product.setValue(request.getValue()); // Using getValue() instead of getPrice()
         product.setCreatedDate(createDate);
+
+		product.validateValue();
         
         productsRepository.saveProduct(product);
         
