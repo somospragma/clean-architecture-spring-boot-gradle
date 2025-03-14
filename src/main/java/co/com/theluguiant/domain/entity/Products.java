@@ -16,6 +16,7 @@ public class Products {
     private String status;
     private BigDecimal value;
     private String createdDate;
+    private double discount;
 
     @DynamoDbPartitionKey
     @DynamoDbAttribute("idProduct")
@@ -71,6 +72,31 @@ public class Products {
 
     public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
+    }
+
+    @DynamoDbAttribute("discount")
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    // Logica de negocio
+    public void applyDiscount(double discountPercentage) {
+        if (discountPercentage < 0 || discountPercentage > 100) {
+            throw new IllegalArgumentException("Discount percentage must be between 0 and 100");
+        }
+        this.discount = discountPercentage;
+        double valueWithDiscount = this.value.doubleValue() - (this.value.doubleValue() * (discountPercentage / 100));
+        this.value = BigDecimal.valueOf(valueWithDiscount);
+    }
+
+    public void validateValue() {
+        if (  1000 > this.value.intValue()) {
+            throw new IllegalArgumentException("Value is never 0");
+        }
     }
 
     @Override

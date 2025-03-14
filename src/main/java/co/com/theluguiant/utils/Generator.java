@@ -1,4 +1,4 @@
-package co.com.theluguiant.util;
+package co.com.theluguiant.utils;
 
 import java.net.NetworkInterface;
 import java.security.SecureRandom;

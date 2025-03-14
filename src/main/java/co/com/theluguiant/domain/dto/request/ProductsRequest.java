@@ -1,4 +1,4 @@
-package co.com.theluguiant.domain.request;
+package co.com.theluguiant.domain.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
