@@ -100,7 +100,7 @@ La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que s
 - Un método que calcula el descuento aplicado a un producto y asegura que no exceda el 20%.
 
 
-#### Notas: 
+## Notas: 
 
 > [ Entidades (Entities)]
 > 
