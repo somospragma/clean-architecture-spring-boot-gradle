@@ -22,6 +22,7 @@ Este proyecto sigue una arquitectura de referencia de "Clean Architecture" o "Ar
 - **Subcarpetas y Responsabilidades:**
     - `entity`: Define las entidades del dominio. Las entidades representan los objetos de negocio principales y contienen la lógica de negocio relacionada con esos objetos.
     - `useCase`: Contienen la lógica de aplicación específica que orquesta las operaciones entre las entidades y otras partes del sistema. Los casos de uso definen las acciones que se pueden realizar en el sistema y encapsulan las reglas de negocio.
+    - `repository`: Define las interfaces que la capa de datos debe implementar para la persistencia de datos. Estas interfaces permiten que la lógica de negocio se mantenga independiente de la implementación de la capa de datos.
     - `dto`: Define los objetos de transferencia de datos.
       - `dto/request`: Contiene las clases que representan las solicitudes de datos que se reciben desde la capa de presentación o desde otras fuentes externas. Estas clases debe incluir validaciones y anotaciones para asegurar que los datos recibidos sean correctos.
       - `dto/response`: Contiene las clases que representan las respuestas de datos que se envían desde la capa de dominio hacia la capa de presentación o hacia otras fuentes externas. Estas clases deben estructurar los datos de manera que sean fácilmente consumibles por los clientes.
