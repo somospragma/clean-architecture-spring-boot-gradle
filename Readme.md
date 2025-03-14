@@ -59,6 +59,38 @@ Es aceptable el uso de una capa transversal siempre y cuando:
 - **Permitan la reutilización y no violen las reglas de la arquitectura:** Las utilidades deben estar desacopladas de la lógica de negocio y de la infraestructura. Si las utilidades se usan en las capas de dominio o aplicación, deben estar en una ubicación centralizada y bien definida, sin crear dependencias entre las capas de la arquitectura.
 - **No contaminen el dominio:** En Clean Architecture, el dominio debe ser el núcleo del sistema y no debe depender de implementaciones externas (como bases de datos, interfaces de usuario, o servicios). Las utilidades transversales, en este caso, deberían evitar depender del dominio o la infraestructura, garantizando que la lógica de negocio no se vea afectada por ellas.
 
+## Reglas de Negocio y Lógica de Negocio
+
+### Regla de Negocio
+
+Una **regla de negocio** es una declaración que define o restringe algún aspecto del negocio. Describe las operaciones, definiciones y restricciones que se aplican a una organización con el propósito de alcanzar sus objetivos. Las reglas de negocio son específicas del dominio y son independientes de cualquier implementación técnica.
+
+#### Características de las Reglas de Negocio:
+- **Específicas del Dominio:** Reflejan las políticas, procedimientos y regulaciones de la organización.
+- **Declarativas:** Definen lo que debe ser verdadero o falso, permitiendo o restringiendo ciertas acciones.
+- **Independientes de la Tecnología:** No dependen de la tecnología o la implementación.
+
+#### Ejemplos de Reglas de Negocio:
+- Un cliente no puede tener más de una cuenta activa.
+- Un pedido debe ser enviado dentro de los 3 días hábiles posteriores a su confirmación.
+
+### Lógica de Negocio
+
+La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que se implementan en el software para cumplir con las reglas de negocio. La lógica de negocio toma las reglas de negocio y las convierte en código ejecutable que realiza las operaciones necesarias para cumplir con los requisitos del negocio.
+
+#### Características de la Lógica de Negocio:
+- **Implementación Técnica:** Es la implementación técnica de las reglas de negocio en el software.
+- **Operacional:** Incluye las operaciones y procesos que manipulan los datos y ejecutan las reglas de negocio.
+- **Dependiente del Contexto:** Puede variar según el contexto y la implementación específica del sistema.
+
+#### Ejemplos de Lógica de Negocio:
+- Un método que calcula el descuento aplicado a un producto y asegura que no exceda el 20%.
+
+### Diferenciación con Ejemplos
+
+#### Regla de Negocio:
+- **Declaración:** "Un cliente no puede tener más de una cuenta activa."
+
 En resumen, se puede usar capas transversales, pero debe estar cuidadosamente diseñada para ser independiente de las capas más críticas (como el dominio) y no introducir dependencias que rompan el aislamiento de las capas.
 
 ## Requisitos
