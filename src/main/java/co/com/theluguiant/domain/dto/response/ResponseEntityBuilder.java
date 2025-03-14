@@ -1,4 +1,4 @@
-package co.com.theluguiant.domain.response;
+package co.com.theluguiant.domain.dto.response;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
