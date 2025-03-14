@@ -35,7 +35,7 @@ Este proyecto sigue una arquitectura de referencia de "Clean Architecture" o "Ar
 ### Capa de Utilidades (Utilities Layer)
 - **Responsabilidad:** Proporcionar utilidades y herramientas comunes que pueden ser utilizadas por otras capas.
 - **Subcarpetas y Responsabilidades:**
-    - `util`: Contiene clases de utilidad y generadores de respuestas.
+    - `utils`: Contiene clases de utilidad y generadores de respuestas.
 
 ## Arquitectura de Referencia
 

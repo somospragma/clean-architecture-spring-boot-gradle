@@ -1,7 +1,7 @@
 package co.com.theluguiant.domain.service;
 
-import co.com.theluguiant.domain.request.ProductsRequest;
-import co.com.theluguiant.domain.response.Response;
+import co.com.theluguiant.domain.dto.request.ProductsRequest;
+import co.com.theluguiant.domain.dto.response.Response;
 
 public interface ProductBusiness {
     Response<String> saveProduct(ProductsRequest request) throws Exception;

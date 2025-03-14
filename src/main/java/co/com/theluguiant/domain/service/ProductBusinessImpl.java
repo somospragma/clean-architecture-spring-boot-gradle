@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 
 import co.com.theluguiant.data.repository.ProductsRepository;
 import co.com.theluguiant.domain.entity.Products;
-import co.com.theluguiant.domain.request.ProductsRequest;
-import co.com.theluguiant.domain.response.Response;
-import co.com.theluguiant.util.Generator;
-import co.com.theluguiant.util.ResponseGenerator;
-import co.com.theluguiant.util.Util;
+import co.com.theluguiant.domain.dto.request.ProductsRequest;
+import co.com.theluguiant.domain.dto.response.Response;
+import co.com.theluguiant.utils.Generator;
+import co.com.theluguiant.domain.utils.ResponseGenerator;
+import co.com.theluguiant.utils.Util;
 
 
 @Service

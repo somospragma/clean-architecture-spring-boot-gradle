@@ -1,8 +1,8 @@
-package co.com.theluguiant.util;
+package co.com.theluguiant.domain.utils;
 
 import org.springframework.http.HttpStatus;
 
-import co.com.theluguiant.domain.response.Response;
+import co.com.theluguiant.domain.dto.response.Response;
 
 public class ResponseGenerator {
     private ResponseGenerator() {
