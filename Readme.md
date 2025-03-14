@@ -100,6 +100,8 @@ La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que s
 - Un método que calcula el descuento aplicado a un producto y asegura que no exceda el 20%.
 
 
+#### Notas: 
+
 > [ Entidades (Entities)]
 > 
 > Las entidades representan los objetos de negocio principales y contienen la lógica de negocio relacionada con esos objetos. Las entidades deben ser independientes de cualquier infraestructura o detalles de implementación. La lógica de negocio que se coloca en las entidades es aquella que es intrínseca al objeto mismo.
