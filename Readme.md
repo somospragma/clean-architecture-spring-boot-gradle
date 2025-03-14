@@ -112,6 +112,7 @@ La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que s
 > [Repositorios (Repositories)]
 >
 > Los repositorios son responsables de la persistencia de datos y las interacciones con la base de datos. Los repositorios deben implementar interfaces definidas en la capa de dominio, pero no deben contener lógica de negocio. La lógica de negocio debe estar en las entidades y en los casos de uso.
+> Ejemplo: Llamados o consumo de por cliente feing a un tercero, consultas a archivos de s3 para traer data, persistencias a DBS
 
 ## Requisitos
 
@@ -140,6 +141,14 @@ La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que s
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para discutir cualquier cambio que desees realizar.
+
+## Enlace al Grupo de GitLab
+
+Puedes encontrar más información y colaborar en el proyecto en nuestro [grupo de GitLab](https://gitlab.com/aws-developer).
+
+## Autor
+
+Este proyecto fue desarrollado por **Fredy Mauricio Garcia Moná**.
 
 ## Licencia
 
