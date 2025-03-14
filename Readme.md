@@ -99,10 +99,19 @@ La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que s
 #### Ejemplos de Lógica de Negocio:
 - Un método que calcula el descuento aplicado a un producto y asegura que no exceda el 20%.
 
-### Diferenciación con Ejemplos
 
-#### Regla de Negocio:
-- **Declaración:** "Un cliente no puede tener más de una cuenta activa."
+> [ Entidades (Entities)]
+> 
+> Las entidades representan los objetos de negocio principales y contienen la lógica de negocio relacionada con esos objetos. Las entidades deben ser independientes de cualquier infraestructura o detalles de implementación. La lógica de negocio que se coloca en las entidades es aquella que es intrínseca al objeto mismo.
+
+
+> [Casos de Uso (Use Cases)]
+> 
+> Los casos de uso (o interactores) contienen la lógica de aplicación específica que orquesta las operaciones entre las entidades y otras partes del sistema. Los casos de uso definen las acciones que se pueden realizar en el sistema y encapsulan las reglas de negocio. Los casos de uso son responsables de coordinar la interacción entre las entidades y los repositorios.
+
+> [Repositorios (Repositories)]
+>
+> Los repositorios son responsables de la persistencia de datos y las interacciones con la base de datos. Los repositorios deben implementar interfaces definidas en la capa de dominio, pero no deben contener lógica de negocio. La lógica de negocio debe estar en las entidades y en los casos de uso.
 
 ## Requisitos
 
