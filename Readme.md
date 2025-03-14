@@ -59,6 +59,8 @@ Es aceptable el uso de una capa transversal siempre y cuando:
 - **Permitan la reutilización y no violen las reglas de la arquitectura:** Las utilidades deben estar desacopladas de la lógica de negocio y de la infraestructura. Si las utilidades se usan en las capas de dominio o aplicación, deben estar en una ubicación centralizada y bien definida, sin crear dependencias entre las capas de la arquitectura.
 - **No contaminen el dominio:** En Clean Architecture, el dominio debe ser el núcleo del sistema y no debe depender de implementaciones externas (como bases de datos, interfaces de usuario, o servicios). Las utilidades transversales, en este caso, deberían evitar depender del dominio o la infraestructura, garantizando que la lógica de negocio no se vea afectada por ellas.
 
+En resumen, se puede usar capas transversales, pero debe estar cuidadosamente diseñada para ser independiente de las capas más críticas (como el dominio) y no introducir dependencias que rompan el aislamiento de las capas.
+
 ## Reglas de Negocio y Lógica de Negocio
 
 ### Regla de Negocio
@@ -90,8 +92,6 @@ La **lógica de negocio** es el conjunto de procesos, reglas y operaciones que s
 
 #### Regla de Negocio:
 - **Declaración:** "Un cliente no puede tener más de una cuenta activa."
-
-En resumen, se puede usar capas transversales, pero debe estar cuidadosamente diseñada para ser independiente de las capas más críticas (como el dominio) y no introducir dependencias que rompan el aislamiento de las capas.
 
 ## Requisitos
 
