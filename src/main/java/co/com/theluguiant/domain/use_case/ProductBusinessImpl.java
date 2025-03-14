@@ -1,9 +1,9 @@
 package co.com.theluguiant.domain.use_case;
 
+import co.com.theluguiant.domain.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.com.theluguiant.data.repository.ProductsRepository;
 import co.com.theluguiant.domain.entity.Products;
 import co.com.theluguiant.domain.dto.request.ProductsRequest;
 import co.com.theluguiant.domain.dto.response.Response;
@@ -14,13 +14,13 @@ import co.com.theluguiant.utils.Util;
 
 @Service
 public class ProductBusinessImpl implements ProductBusiness {
-	
-	private final ProductsRepository productsRepository;
 
-    @Autowired
-    public ProductBusinessImpl(ProductsRepository productsRepository) {
-        this.productsRepository = productsRepository;
-    }
+	private final ProductsRepository productRepository;
+
+	@Autowired
+	public ProductBusinessImpl(ProductsRepository productRepository) {
+		this.productRepository = productRepository;
+	}
 
 	@Override
 	public Response<String> saveProduct(ProductsRequest request) throws Exception {
@@ -38,8 +38,8 @@ public class ProductBusinessImpl implements ProductBusiness {
         product.setCreatedDate(createDate);
 
 		product.validateValue();
-        
-        productsRepository.saveProduct(product);
+
+		productRepository.saveProduct(product);
         
 		return ResponseGenerator.callResponse("Save", null);
 	}
