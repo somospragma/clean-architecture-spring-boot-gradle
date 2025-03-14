@@ -59,6 +59,16 @@ Es aceptable el uso de una capa transversal siempre y cuando:
 - **Permitan la reutilización y no violen las reglas de la arquitectura:** Las utilidades deben estar desacopladas de la lógica de negocio y de la infraestructura. Si las utilidades se usan en las capas de dominio o aplicación, deben estar en una ubicación centralizada y bien definida, sin crear dependencias entre las capas de la arquitectura.
 - **No contaminen el dominio:** En Clean Architecture, el dominio debe ser el núcleo del sistema y no debe depender de implementaciones externas (como bases de datos, interfaces de usuario, o servicios). Las utilidades transversales, en este caso, deberían evitar depender del dominio o la infraestructura, garantizando que la lógica de negocio no se vea afectada por ellas.
 
+## Reglas de Comunicación entre Capas
+
+En la arquitectura limpia, las reglas de comunicación entre capas son fundamentales para mantener la separación de responsabilidades y la independencia de las capas. Las reglas son las siguientes:
+
+- **Dominio se comunica con Datos:** La capa de dominio puede comunicarse con la capa de datos a través de interfaces definidas en la capa de dominio.
+- **Datos se comunica con Dominio:** La capa de datos implementa las interfaces definidas en la capa de dominio y puede comunicarse con la capa de dominio.
+- **Dominio se comunica con Presentación:** La capa de dominio puede comunicarse con la capa de presentación a través de interfaces definidas en la capa de dominio.
+- **Presentación se comunica con Dominio:** La capa de presentación puede comunicarse con la capa de dominio a través de interfaces definidas en la capa de dominio.
+- **Presentación nunca se comunica con Datos:** La capa de presentación no debe comunicarse directamente con la capa de datos. Toda la comunicación debe pasar a través de la capa de dominio.
+
 En resumen, se puede usar capas transversales, pero debe estar cuidadosamente diseñada para ser independiente de las capas más críticas (como el dominio) y no introducir dependencias que rompan el aislamiento de las capas.
 
 ## Reglas de Negocio y Lógica de Negocio
